@@ -182,7 +182,7 @@ public class Sample01 implements Opcodes {
 
     public static void main(String[] args) throws Exception {
 
-        System.out.println("\n--- (1) DEFINE CLASS 8Byte Array) & Test ---\n");
+        System.out.println("\n--- (1) DEFINE CLASS (Byte Array) & Test ---\n");
 
         DynamicClassLoader loader = new DynamicClassLoader(
                 Thread.currentThread().getContextClassLoader());
@@ -191,9 +191,10 @@ public class Sample01 implements Opcodes {
 
         Class<?> testClass = loader.define((CLASS_NAME).replace("/", "."), compile());
         ASMInterface asmClass = (ASMInterface) testClass.newInstance();
-        int result = asmClass.add(2, 8);
         
         System.out.println(">> Test the instance:\n");
+        
+        int result = asmClass.add(2, 8);
 
         System.out.println(" --> Result:    " + result);
 
